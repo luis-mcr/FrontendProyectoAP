@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  *
- * @author lumic
+ * @author Usuario
  */
 public class UsuarioPrincipal implements UserDetails {
 
@@ -23,7 +23,7 @@ public class UsuarioPrincipal implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    //Constructor 
+    //Constructor
     public UsuarioPrincipal(String nombre, String nombreUsuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;

@@ -20,8 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/personas/traer")
+    @GetMapping("personas/traer")
     public List<Persona> getPersona(){
         return ipersonaService.getPersona();
     }
@@ -45,7 +44,7 @@ public class PersonaController {
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,
                                @RequestParam("apellido") String nuevoApellido,
-                               @RequestParam("img") String nuevoImg) {
+                               @RequestParam("img") String nuevoImg){
         Persona persona = ipersonaService.findPersona(id);
         
         persona.setNombre(nuevoNombre);
@@ -54,11 +53,11 @@ public class PersonaController {
         
         ipersonaService.savePersona(persona);
         return persona;
-        
     }
     
-    @GetMapping("/personas/traer/perfil")
+    @GetMapping("personas/traer/perfil")
     public Persona findPersona(){
-        return ipersonaService.findPersona((long)5);
+        return ipersonaService.findPersona((long)1);
     }
+   
 }

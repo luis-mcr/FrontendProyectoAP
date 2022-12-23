@@ -24,5 +24,5 @@ public class RolService {
     
     public void save(Rol rol){
         irolRepository.save(rol);
-   }
+    }
 }
